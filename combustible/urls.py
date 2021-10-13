@@ -20,5 +20,5 @@ from visualization import views as appViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('showprices/', appViews.ShowPricesView.as_view()),
+    path('showprices/', appViews.AllStationsView.as_view()),
 ]

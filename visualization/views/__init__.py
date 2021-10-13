@@ -1,1 +1,1 @@
-from .showPricesView import ShowPricesView
+from .showPricesView import AllStationsView
