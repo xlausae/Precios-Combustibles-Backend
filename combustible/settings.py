@@ -99,10 +99,10 @@ WSGI_APPLICATION = 'combustible.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE'  : 'django.db.backends.postgresql_psycopg2',
-        'NAME'    : 'd4kgla3t91jifv' ,
-        'USER'    : 'jfvdkzlkrhshco',
-        'PASSWORD': '8ab48e4962afe630f09b85838345e8a16e30597bc7abe660913f19a9eacd90ec',
-        'HOST'    : 'ec2-44-198-196-149.compute-1.amazonaws.com',
+        'NAME'    : 'newdban' ,
+        'USER'    : 'postgres',
+        'PASSWORD': 'postg',
+        'HOST'    : 'localhost',
         'PORT'    : '5432'
     }
 }
