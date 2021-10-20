@@ -3,3 +3,9 @@ from .stationCreateView import StationCreateView
 from .municipioCreateView import MunicipioCreateView
 from .banderaCreateView import BanderaCreateView
 from .departamentoCreateView import DepartamentoCreateView
+
+#Views Tipo_Producto
+from .modTipoProductosView import TipoProductoDetailView
+from .modTipoProductosView import TipoProductoCreateView
+from .modTipoProductosView import TipoProductoUpdateView
+from .modTipoProductosView import TipoProductoDeleteView

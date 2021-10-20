@@ -27,4 +27,8 @@ urlpatterns = [
     path('bandera/', appViews.BanderaCreateView.as_view()),
     path('departamento/', appViews.DepartamentoCreateView.as_view()),
 
+    path('mod/<int:pk>/',                   appViews.TipoProductoDetailView.as_view()),
+    path('mod/create/',                     appViews.TipoProductoCreateView.as_view()),
+    path('mod/update/<int:pk>/',            appViews.TipoProductoUpdateView.as_view()),
+    path('mod/remove/<int:pk>/',            appViews.TipoProductoDeleteView.as_view()),
 ]
