@@ -8,8 +8,8 @@ class Tipo_productosSerializer(serializers.ModelSerializer):
         
     def to_representation(self,obj):
         product  = Tipo_productos.objects.get(cod_tipo_producto=obj.cod_tipo_producto)
-        product  = Tipo_productos.objects.get(nom_tipo_producto=obj.nom_tipo_producto)
+        product1  = Tipo_productos.objects.get(nom_tipo_producto=obj.nom_tipo_producto)
         return {
             'cod_tipo_producto' : product.cod_tipo_producto,
-            'nom_tipo_producto' : product.nom_tipo_producto
+            'nom_tipo_producto' : product1.nom_tipo_producto
         }

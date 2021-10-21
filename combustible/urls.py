@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('showprices/', appViews.AllStationsView.as_view()),
     path('station/', appViews.StationCreateView.as_view()),
+    path('station/remove/<int:pk>/',            appViews.StationDeleteView.as_view()),
+
     path('municipio/', appViews.MunicipioCreateView.as_view()),
     path('bandera/', appViews.BanderaCreateView.as_view()),
     path('departamento/', appViews.DepartamentoCreateView.as_view()),
