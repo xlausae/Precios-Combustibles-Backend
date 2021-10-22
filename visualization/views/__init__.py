@@ -10,3 +10,7 @@ from .modTipoProductosView import TipoProductoDetailView
 from .modTipoProductosView import TipoProductoCreateView
 from .modTipoProductosView import TipoProductoUpdateView
 from .modTipoProductosView import TipoProductoDeleteView
+
+from .modEstacionesProductosView import EstacionesProductosDetailView
+from .modEstacionesProductosView import EstacionesProductosCreateView
+from .modEstacionesProductosView import EstacionesProductosDeleteView
