@@ -15,22 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
 
 from visualization import views as appViews
 from visualization.views.municipioCreateView import MunicipioCreateView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('showprices/', appViews.AllStationsView.as_view()),
-    path('station/', appViews.StationCreateView.as_view()),
-    path('station/remove/<int:pk>/',            appViews.StationDeleteView.as_view()),
+    path('admin/',                    admin.site.urls),
+    path('login/',                    TokenObtainPairView.as_view()), 
+    path('refresh/',                  TokenRefreshView.as_view()), 
+    path('user/',                     appViews.UserCreateView.as_view()),
+    path('user/<int:pk>/',            appViews.UserDetailView.as_view()), 
+    path('showprices/',               appViews.AllStationsView.as_view()),
+    path('station/',                  appViews.StationCreateView.as_view()),
+    path('station/remove/<int:pk>/',  appViews.StationDeleteView.as_view()),
 
-    path('municipio/', appViews.MunicipioCreateView.as_view()),
-    path('bandera/', appViews.BanderaCreateView.as_view()),
-    path('departamento/', appViews.DepartamentoCreateView.as_view()),
+    path('municipio/',                appViews.MunicipioCreateView.as_view()),
+    path('bandera/',                  appViews.BanderaCreateView.as_view()),
+    path('departamento/',             appViews.DepartamentoCreateView.as_view()),
 
-    path('mod/<int:pk>/',                   appViews.TipoProductoDetailView.as_view()),
-    path('mod/create/',                     appViews.TipoProductoCreateView.as_view()),
-    path('mod/update/<int:pk>/',            appViews.TipoProductoUpdateView.as_view()),
-    path('mod/remove/<int:pk>/',            appViews.TipoProductoDeleteView.as_view()),
+    path('mod/<int:pk>/',             appViews.TipoProductoDetailView.as_view()),
+    path('mod/create/',               appViews.TipoProductoCreateView.as_view()),
+    path('mod/update/<int:pk>/',      appViews.TipoProductoUpdateView.as_view()),
+    path('mod/remove/<int:pk>/',      appViews.TipoProductoDeleteView.as_view()),
 ]
