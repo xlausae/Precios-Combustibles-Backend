@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CORS_ALLOW_ALL_ORIGINS = True
+    
+
 
 # Application definition
 
@@ -40,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'visualization',
+    'corsheaders',
 ]
 
 SIMPLE_JWT = {
@@ -61,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 REST_FRAMEWORK = {
@@ -103,7 +108,7 @@ DATABASES = {
         'ENGINE'  : 'django.db.backends.postgresql_psycopg2',
         'NAME'    : 'newdban' ,
         'USER'    : 'postgres',
-        'PASSWORD': 'postg',
+        'PASSWORD': 'Felipe$24',
         'HOST'    : 'localhost',
         'PORT'    : '5432'
     }
