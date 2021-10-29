@@ -5,20 +5,13 @@ from visualization.serializers.tipo_productosSerializer import Tipo_productosSer
 from visualization.models.tipo_productos    import Tipo_productos
 
 class TipoProductoCreateView(generics.CreateAPIView):
-
     def post(self, request, *args, **kwargs):
-        serializer = Tipo_productosSerializer(data=request.data)
+
+        serializer = Tipo_productosSerializer(data = request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        dat = {
-            "nom_tipo_producto" : request.data['nom_tipo_producto']
-        }
-
-        t_producto = Tipo_productos.objects.get(data=dat)
-        t_producto.save()
-
-        return Response("Registro exitoso", status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class TipoProductoDetailView(generics.RetrieveAPIView):
     serializer_class = Tipo_productosSerializer
